@@ -1,1 +1,24 @@
+Day 1: Hardware Setup and Board Selection
+Project Overview
 
+At Nexforz Agritech, we are developing an edge monitoring system for a mushroom polyhouse. Mushroom crops depend on strictly controlled environments, making continuous monitoring of temperature, humidity, and CO₂ essential. If a sensor fails or data drops, crop yield can suffer, so the hardware needs to be reliable.
+
+Board Comparison & Final Choice
+
+We evaluated two microcontrollers for this node: the ESP8266 and the ESP32.
+
+ESP8266: Very low cost and suitable for simple projects, but it has limited memory, fewer usable pins, a single core, and no built-in Bluetooth.
+
+ESP32: Features a faster dual-core processor, far more memory, built-in Bluetooth, and dedicated hardware for encryption.
+
+Decision: We selected the ESP32. Later in the internship, we will send data to the cloud using encrypted MQTT connections. The ESP8266 often runs out of memory during secure handshakes, whereas the ESP32 has plenty of memory to handle both sensor reading and encrypted network transfers simultaneously without crashing.
+
+Work Completed Today
+
+Development Setup: Installed Arduino IDE 2.x, added the ESP32 board package, and connected the board via USB.
+
+Hardware Verification: Wrote and uploaded a blink sketch. Confirmed the onboard blue LED blinks properly and verified that status messages print clearly in the Serial Monitor at 115200 baud.
+
+DHT22 Pin Selection: Checked the board pinout to plan for the upcoming DHT22 temperature and humidity sensor. We picked GPIO 4 because it is a safe, standard pin that will not cause boot issues or conflict with the board's startup process.
+
+Repository Organization: Set up the GitHub project structure with dedicated folders for code (firmware/), documentation (docs/), and photo proof (images/).
